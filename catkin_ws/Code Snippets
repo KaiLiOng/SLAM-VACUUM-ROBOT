@@ -1,0 +1,29 @@
+WE USED SLAM (SIMULTANEOUS LOCALIZATION & MAPPING)
+
+OPEN A TERMINAL:
+1. cd catkin_ws/
+2. source devel/setup.bash
+3. roslaunch my_simulations my_world.launch
+
+OPEN ANOTHER TERMINAL:
+4. roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+
+BUILDING A MAP:
+
+** YOU MAY RUN TELEOPERATION NODE
+(Once SLAM node is successfully up and running, the Robot will be exploring unknown area of the map using teleoperation -- It is important to avoid vigorous movements such as changing the linear and angular speed too quickly.)
+5. roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+OR
+
+** USING THE 2D NAV GOAL
+
+
+
+***-- It is a good practice to scan every corner of the map when building a map 
+
+After the map is drawn based on the robot's odometry, tf (which is the package lets the user keep track of multiple coordinate frames over time)and scan information. These map data is drawn in the RViz window as the Robot was traveling.
+After creating a map of desired area, save the map data to local drive for later use.
+
+6. rosrun map_server map_saver -f ~/map
+
