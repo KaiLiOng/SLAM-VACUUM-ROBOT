@@ -7,6 +7,8 @@ OPEN A TERMINAL:
 
 OPEN ANOTHER TERMINAL:
 4. roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+
 
 BUILDING A MAP:
 
